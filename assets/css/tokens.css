@@ -1,0 +1,47 @@
+:root {
+  --c-blue: #1e83e9;
+  --c-violet: #6c3bd9;
+  --c-magenta: #e91d7a;
+  --c-gorse: #ffe94e;
+  --c-hermes: #1e3a8a;
+  --c-daysi: #4c1d95;
+  --c-gray: #6b7280;
+
+  --c-blue-cream: #cde3fa;
+  --c-shark-soft: #ded3f7;
+  --c-citric: #fff8c4;
+  --c-best-pink: #facde1;
+
+  --c-bg: #ffffff;
+  --c-bg-alt: #0b0f1a;
+  --c-text: #0b1120;
+  --c-text-muted: #4b5563;
+  --c-line: rgba(11, 17, 32, .08);
+
+  --gradient-brand: linear-gradient(120deg, #1e83e9 0%, #6c3bd9 50%, #e91d7a 100%);
+  --gradient-brand-soft: linear-gradient(120deg, #cde3fa 0%, #ded3f7 55%, #facde1 100%);
+  --gradient-dark: radial-gradient(1200px 600px at 20% -10%, rgba(108,59,217,.35), transparent 60%),
+                    radial-gradient(900px 500px at 90% 10%, rgba(233,29,122,.25), transparent 60%),
+                    radial-gradient(800px 600px at 50% 110%, rgba(30,131,233,.3), transparent 60%),
+                    #0b0f1a;
+
+  --font-display: 'Montserrat', 'Gotham', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  --font-body: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+
+  --fs-h1: clamp(3rem, 9vw, 8rem);
+  --fs-h2: clamp(2rem, 5vw, 4rem);
+  --fs-h3: clamp(1.3rem, 2vw, 1.75rem);
+  --fs-body: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-sm: .875rem;
+
+  --radius-chamfer: 14px;
+  --chamfer-clip: polygon(18px 0, 100% 0, 100% calc(100% - 18px), calc(100% - 18px) 100%, 0 100%, 0 18px);
+
+  --ease-brand: cubic-bezier(.22, .61, .36, 1);
+  --ease-out-strong: cubic-bezier(.16, 1, .3, 1);
+
+  --container: 1200px;
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+  --header-h: 72px;
+}

@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" aria-hidden="true">
+  <defs>
+    <linearGradient id="cubeTop" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3aa3ff"/>
+      <stop offset="100%" stop-color="#1e83e9"/>
+    </linearGradient>
+    <linearGradient id="cubeLeft" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e83e9"/>
+      <stop offset="100%" stop-color="#6c3bd9"/>
+    </linearGradient>
+    <linearGradient id="cubeRight" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6c3bd9"/>
+      <stop offset="100%" stop-color="#e91d7a"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Ambient orbiting dots -->
+  <g opacity=".55">
+    <circle cx="80" cy="120" r="3" fill="#e91d7a"/>
+    <circle cx="520" cy="150" r="4" fill="#1e83e9"/>
+    <circle cx="540" cy="460" r="3" fill="#6c3bd9"/>
+    <circle cx="70" cy="470" r="2.5" fill="#ffe94e"/>
+  </g>
+
+  <!-- CUBE -->
+  <g filter="url(#glow)">
+    <!-- top face -->
+    <polygon points="300,80 500,180 300,280 100,180" fill="url(#cubeTop)"/>
+    <!-- left face -->
+    <polygon points="100,180 300,280 300,520 100,420" fill="url(#cubeLeft)"/>
+    <!-- right face -->
+    <polygon points="500,180 300,280 300,520 500,420" fill="url(#cubeRight)"/>
+
+    <!-- edges -->
+    <g fill="none" stroke="#ffffff" stroke-width="2" stroke-opacity=".65">
+      <polyline points="300,80 500,180 300,280 100,180 300,80"/>
+      <line x1="300" y1="280" x2="300" y2="520"/>
+      <line x1="100" y1="180" x2="100" y2="420"/>
+      <line x1="500" y1="180" x2="500" y2="420"/>
+      <polyline points="100,420 300,520 500,420"/>
+    </g>
+
+    <!-- "i3D" glyph on front -->
+    <g fill="#ffffff" font-family="'Montserrat', sans-serif" font-weight="900" letter-spacing="-4">
+      <text x="155" y="420" font-size="130" transform="skewY(-14)">i3D</text>
+    </g>
+  </g>
+
+  <!-- Orbital thin ring -->
+  <ellipse cx="300" cy="310" rx="260" ry="90" fill="none" stroke="#6c3bd9" stroke-opacity=".25" stroke-width="1.5" stroke-dasharray="3 6" transform="rotate(-18 300 310)"/>
+</svg>
