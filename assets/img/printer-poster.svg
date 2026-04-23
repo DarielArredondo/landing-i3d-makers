@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" aria-hidden="true">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b0f1a"/>
+      <stop offset="100%" stop-color="#16102e"/>
+    </linearGradient>
+    <linearGradient id="acc" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1e83e9"/>
+      <stop offset="50%" stop-color="#6c3bd9"/>
+      <stop offset="100%" stop-color="#e91d7a"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2a3142"/>
+      <stop offset="100%" stop-color="#141826"/>
+    </linearGradient>
+    <linearGradient id="glow" x1=".5" y1="0" x2=".5" y2="1">
+      <stop offset="0%" stop-color="#6c3bd9" stop-opacity=".35"/>
+      <stop offset="100%" stop-color="#6c3bd9" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="600" fill="url(#bg)"/>
+
+  <!-- base pedestal glow -->
+  <ellipse cx="300" cy="520" rx="200" ry="24" fill="url(#glow)"/>
+
+  <!-- printer frame (cube-ish) -->
+  <g>
+    <!-- base -->
+    <rect x="170" y="430" width="260" height="30" rx="4" fill="#2a3142" stroke="#3a4258" stroke-width="1"/>
+    <!-- body -->
+    <rect x="170" y="160" width="260" height="280" rx="6" fill="url(#metal)" stroke="#3a4258" stroke-width="1.5"/>
+    <!-- front glass panel -->
+    <rect x="190" y="200" width="220" height="220" rx="4" fill="#0a0d18" stroke="#3a4258" stroke-width="1"/>
+    <rect x="190" y="200" width="220" height="220" rx="4" fill="url(#acc)" opacity=".08"/>
+    <!-- interior: heated bed -->
+    <rect x="210" y="370" width="180" height="14" rx="2" fill="#3a4258"/>
+    <rect x="210" y="370" width="180" height="3" fill="url(#acc)" opacity=".6"/>
+    <!-- top -->
+    <rect x="170" y="140" width="260" height="24" rx="4" fill="#1a1f2e" stroke="#3a4258" stroke-width="1"/>
+    <!-- toolhead/gantry -->
+    <rect x="210" y="240" width="180" height="10" fill="#3a4258"/>
+    <rect x="285" y="235" width="30" height="40" rx="3" fill="#4c1d95" stroke="url(#acc)" stroke-width="1"/>
+    <!-- small LED -->
+    <circle cx="300" cy="260" r="3" fill="#e91d7a"/>
+    <!-- brand stripe -->
+    <rect x="170" y="140" width="260" height="3" fill="url(#acc)"/>
+  </g>
+
+  <!-- loading indicator text -->
+  <g font-family="'Montserrat', sans-serif" text-anchor="middle" fill="#fff" opacity=".75">
+    <text x="300" y="80" font-size="14" font-weight="800" letter-spacing="4">CARGANDO</text>
+    <text x="300" y="102" font-size="10" letter-spacing="3" fill="#a798d4">VISUALIZADOR 3D</text>
+  </g>
+  <!-- spinner dots -->
+  <g fill="url(#acc)">
+    <circle cx="286" cy="120" r="3">
+      <animate attributeName="opacity" values="1;.2;1" dur="1.2s" repeatCount="indefinite" begin="0s"/>
+    </circle>
+    <circle cx="300" cy="120" r="3">
+      <animate attributeName="opacity" values="1;.2;1" dur="1.2s" repeatCount="indefinite" begin=".2s"/>
+    </circle>
+    <circle cx="314" cy="120" r="3">
+      <animate attributeName="opacity" values="1;.2;1" dur="1.2s" repeatCount="indefinite" begin=".4s"/>
+    </circle>
+  </g>
+</svg>

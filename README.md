@@ -8,8 +8,18 @@ Landing page one-page para **i3D MAKERS**, construida con HTML + CSS + JS vanill
 - Montserrat (Google Fonts) — sustituto libre de Gotham
 - Lenis 1.3.23 — smooth scroll
 - GSAP 3.12.5 + ScrollTrigger — parallax, reveals, pin horizontal
+- `<model-viewer>` 4.0.0 (Google) — visor 3D interactivo en el hero (rotación mouse + touch, pinch-zoom, AR)
 
 Sin build step. Todo vía CDN.
+
+## Modelo 3D del hero
+
+El hero incluye un visor 3D interactivo de una **Bambu Lab X1 Carbon**.
+Antes de deployar, descargar el GLB siguiendo [assets/models/README.md](assets/models/README.md) y dejarlo en `assets/models/printer.glb`.
+
+Mientras no exista, se muestra el poster SVG sin romper el layout.
+
+**Atribución:** modelo por [petersonja2 (@Chase_6)](https://sketchfab.com/Chase_6) bajo licencia [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Ya incluida en el footer del sitio.
 
 ## Correr localmente
 
@@ -60,13 +70,25 @@ Luego abrir http://localhost:8080
 
 1. **Scroll suave global** con inercia exponencial (`duration: 1.15`).
 2. **Reveal del H1** línea por línea al cargar.
-3. **Parallax del cubo** isométrico ligado al scroll + flotación idle.
-4. **Reveals** (`.reveal`) en todas las secciones al entrar al viewport.
-5. **Pin + scroll horizontal** en la sección *Proceso* (4 pasos) con barra de progreso.
-6. **Parallax por velocidad** (`data-speed`) en la galería.
-7. **Header glassmorphism** al hacer scroll.
-8. **Navegación smooth** usando `lenis.scrollTo`.
-9. **`prefers-reduced-motion`** respetado en todo el sitio.
+3. **Visor 3D interactivo** en el hero: rotación mouse + touch, pinch-zoom, auto-rotate, hotspots, botón AR.
+4. **Parallax sutil del frame** del visor ligado al scroll (sin interferir con la cámara).
+5. **Reveals** (`.reveal`) en todas las secciones al entrar al viewport.
+6. **Pin + scroll horizontal** en la sección *Proceso* (4 pasos) con barra de progreso.
+7. **Parallax por velocidad** (`data-speed`) en la galería.
+8. **Header glassmorphism** al hacer scroll.
+9. **Navegación smooth** usando `lenis.scrollTo`.
+10. **`prefers-reduced-motion`** respetado en todo el sitio.
+
+## Visor 3D — features
+
+- **Rotación:** drag con mouse (desktop) o un dedo (móvil).
+- **Zoom:** rueda del mouse o pinch con dos dedos.
+- **Auto-rotate:** arranca a los 2.5 s de inactividad.
+- **Hotspots:** 3 puntos interactivos (Cabezal, Mesa, Display) que cambian las specs del panel lateral y re-encuadran la cámara al click.
+- **Controles:** botones de reset vista, pausar rotación y activar AR.
+- **AR móvil:** abre Scene Viewer (Android) o Quick Look (iOS) para colocar el printer en tu entorno.
+- **Performance:** iluminación HDR neutral, tone mapping ACES, sombras suaves. Poster SVG mientras carga el GLB.
+- **Accesibilidad:** `aria-label` en controles, `data-lenis-prevent` para que el gesto de rotación no scrollee la página.
 
 ## Próximos pasos
 

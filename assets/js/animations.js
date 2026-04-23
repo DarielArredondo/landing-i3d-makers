@@ -22,14 +22,13 @@
   }
 
   /* -----------------------------------------
-     2. Hero — parallax del cubo + rotación ligera
+     2. Hero visual — parallax suave del frame del visor
+     (el <model-viewer> maneja su propia cámara; solo desplazamos el contenedor)
      ----------------------------------------- */
-  const cube = document.querySelector('.hero-cube');
-  if (cube && !prefersReduced) {
-    gsap.to(cube, {
-      y: 120,
-      rotate: 6,
-      scale: 0.95,
+  const heroVisual = document.querySelector('.hero-visual');
+  if (heroVisual && !prefersReduced) {
+    gsap.to(heroVisual, {
+      y: 60,
       ease: 'none',
       scrollTrigger: {
         trigger: '.hero',
@@ -37,26 +36,6 @@
         end: 'bottom top',
         scrub: true,
       },
-    });
-
-    // Floating idle animation
-    gsap.to(cube, {
-      y: '+=14',
-      duration: 3.2,
-      yoyo: true,
-      repeat: -1,
-      ease: 'sine.inOut',
-    });
-
-    // Orbit tags drift
-    gsap.utils.toArray('.hero-orbit span').forEach((el, i) => {
-      gsap.to(el, {
-        y: (i % 2 === 0 ? -14 : 14),
-        duration: 4 + i * 0.6,
-        yoyo: true,
-        repeat: -1,
-        ease: 'sine.inOut',
-      });
     });
   }
 
